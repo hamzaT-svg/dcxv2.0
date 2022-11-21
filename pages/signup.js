@@ -1,13 +1,29 @@
 import { PrivateLayout } from "../components";
 
-export default function Signin() {
+const Signup = () => {
   return (
     <PrivateLayout>
       <div className="space-y-2 w-full">
         <h1 className="text-center font-semibold text-xl text-[#1162FF]">
-          Sign In
+          Sign Up
         </h1>
         <form className="w-full space-y-3">
+          <div className="space-y-1">
+            <label>First Name</label>
+            <input
+              className="rounded-md px-2 py-2 outline-none w-full bg-[#f5f5f5]"
+              placeholder="Enter your First Name"
+              type="text"
+            />
+          </div>
+          <div className="space-y-1">
+            <label>Last Name</label>
+            <input
+              className="rounded-md px-2 py-2 outline-none w-full bg-[#f5f5f5]"
+              placeholder="Enter your Last Name"
+              type="text"
+            />
+          </div>
           <div className="space-y-1">
             <label>Email</label>
             <input
@@ -24,18 +40,19 @@ export default function Signin() {
               type="password"
             />
           </div>
-          <p className="text-sm opacity-50 cursor-pointer ">Forget Password?</p>
           <button className="bg-[#1162FF] w-full text-[#ffffff] rounded-md py-2">
-            Sign In
+            Sign Up
           </button>
         </form>
         <p className="text-center">
-          Dont have an account?{" "}
+          Already have an account?{" "}
           <span className="text-[#1162FF] underline cursor-pointer ">
-            Sign up
+            Log in
           </span>
         </p>
       </div>
     </PrivateLayout>
   );
-}
+};
+
+export default Signup;
