@@ -4,13 +4,13 @@ import { PublicLayout } from "../components";
 const Dashboard = () => {
   return (
     <PublicLayout>
-      <div className="flex md:flex-row flex-col w-full relative">
-        <div className="flex-1">
+      <div className="flex md:flex-row space-x-4 flex-col w-full relative">
+        <div className="max-w-5xl">
           <Cards />
           <Stats />
           <Trending />
         </div>
-        <div className="w-96 space-y-4">
+        <div className="w-full md:w-96 space-y-4">
           <Trade />
           <QuickTransfer />
           <RecentTransactions />
@@ -24,7 +24,7 @@ export default Dashboard;
 
 const Cards = () => {
   return (
-    <div className="flex items-center space-x-4 lg:space-x-8 overflow-x-auto no-scroll-bar ">
+    <div className="flex items-center space-x-4 lg:space-x-6 overflow-x-auto no-scroll-bar ">
       <div className="rounded-md flex flex-col justify-between bg-[#0075FF] h-44 min-w-[320px] p-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -58,7 +58,6 @@ const Cards = () => {
           </div>
         </div>
       </div>
-
       <div className="rounded-md flex flex-col justify-between bg-[#FFFFFF] h-44 min-w-[320px] p-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -92,8 +91,6 @@ const Cards = () => {
           </div>
         </div>
       </div>
-
-      
       <div className="rounded-md flex flex-col justify-between bg-[#FFFFFF] h-44 min-w-[320px] p-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -136,7 +133,164 @@ const Stats = () => {
 };
 
 const Trending = () => {
-  return <div>Trending</div>;
+  return (
+    <div className="bg-[#FFFFFF] rounded-md p-4 space-y-6">
+      <div className="flex font-semibold text-base items-center justify-between">
+        <h1>Trending Market</h1>
+        <h1 className="text-[#0075FF]">View more markets</h1>
+      </div>
+
+      <div className="space-y-4">
+        <div className="flex items-center text-[#A9A9A9] font-normal border-b border-[#E3E3E3] py-1">
+          <h1 className="flex-1 text-left">Token</h1>
+          <h1 className="flex-1">Symbol</h1>
+          <h1 className="flex-1">Last Price</h1>
+          <h1 className="flex-1">24H Change</h1>
+          <h1 className="flex-1 text-right">Market Cap</h1>
+        </div>
+        <div className="space-y-3">
+          <div className="flex items-center ">
+            <div className="flex-1  flex items-center space-x-2">
+              <Image
+                src={"/assets/icons/bnb.svg"}
+                alt="bnb"
+                width={24}
+                height={24}
+              />
+              <h2 className="font-semibold">BNB</h2>
+            </div>
+            <div className="flex-1">
+              <h3>BNB</h3>
+            </div>
+            <div className="flex-1">
+              <h3>$41.263,00</h3>
+            </div>
+            <div className="flex-1 flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/balance.svg"}
+                alt="balance"
+                width={15}
+                height={15}
+              />
+              <h3 className="text-[#53D258] font-medium">+35,74%</h3>
+            </div>
+            <div className="flex-1 text-right">$784,393M</div>
+          </div>
+          <div className="flex items-center ">
+            <div className="flex-1 flex items-center space-x-2">
+              <Image
+                src={"/assets/icons/bitcoin.svg"}
+                alt="bitcoin"
+                width={24}
+                height={24}
+              />
+              <h2 className="font-semibold">Bitcoin</h2>
+            </div>
+            <div className="flex-1">
+              <h3>BTC</h3>
+            </div>
+            <div className="flex-1">
+              <h3>$41.263,00</h3>
+            </div>
+            <div className="flex-1 flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/balance.svg"}
+                alt="balance"
+                width={15}
+                height={15}
+              />
+              <h3 className="text-[#53D258] font-medium">+35,74%</h3>
+            </div>
+            <div className="flex-1 text-right">$784,393M</div>
+          </div>
+
+          <div className="flex items-center ">
+            <div className="flex-1 flex items-center space-x-2">
+              <Image
+                src={"/assets/icons/ethereum.svg"}
+                alt="ethereum"
+                width={24}
+                height={24}
+              />
+              <h2 className="font-semibold">Ethereum</h2>
+            </div>
+            <div className="flex-1">
+              <h3>ETH</h3>
+            </div>
+            <div className="flex-1">
+              <h3>$41.263,00</h3>
+            </div>
+            <div className="flex-1 flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/balance.svg"}
+                alt="balance"
+                width={15}
+                height={15}
+              />
+              <h3 className="text-[#53D258] font-medium">+35,74%</h3>
+            </div>
+            <div className="flex-1 text-right">$784,393M</div>
+          </div>
+
+          <div className="flex items-center ">
+            <div className="flex-1 flex items-center space-x-2">
+              <Image
+                src={"/assets/icons/tera.svg"}
+                alt="tera"
+                width={24}
+                height={24}
+              />
+              <h2 className="font-semibold">Terra</h2>
+            </div>
+            <div className="flex-1">
+              <h3>LUNA</h3>
+            </div>
+            <div className="flex-1">
+              <h3>$41.263,00</h3>
+            </div>
+            <div className="flex-1 flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/balance.svg"}
+                alt="balance"
+                width={15}
+                height={15}
+              />
+              <h3 className="text-[#53D258] font-medium">+35,74%</h3>
+            </div>
+            <div className="flex-1 text-right">$784,393M</div>
+          </div>
+
+          <div className="flex items-center ">
+            <div className="flex-1 flex items-center space-x-2">
+              <Image
+                src={"/assets/icons/ada.svg"}
+                alt="ada"
+                width={24}
+                height={24}
+              />
+              <h2 className="font-semibold">Cardano</h2>
+            </div>
+            <div className="flex-1">
+              <h3>ADA</h3>
+            </div>
+            <div className="flex-1">
+              <h3>$41.263,00</h3>
+            </div>
+            <div className="flex-1 flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/balance.svg"}
+                alt="balance"
+                width={15}
+                height={15}
+              />
+              <h3 className="text-[#53D258] font-medium">+35,74%</h3>
+            </div>
+            <div className="flex-1 text-right">$784,393M</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Trade = () => {
@@ -158,7 +312,11 @@ const Trade = () => {
 
       <div className=" relative">
         <div className="border-2 border-[#CACACA] p-3 font-semibold rounded-md flex items-center justify-between text-sm">
-          <input value={"0.1824"} className="outline-none" />
+          <input
+            value={"0.1824"}
+            onChange={() => {}}
+            className="outline-none"
+          />
           <div className="flex items-center space-x-1">
             <Image
               src={"/assets/icons/usdc.svg"}
@@ -184,7 +342,11 @@ const Trade = () => {
           />
         </div>
         <div className="border-2 mt-3 border-[#0075FF] p-3 font-semibold rounded-md flex items-center justify-between text-sm">
-          <input value={"0.1824"} className="outline-none" />
+          <input
+            value={"0.1824"}
+            onChange={() => {}}
+            className="outline-none"
+          />
           <div className="flex items-center space-x-1">
             <Image
               src={"/assets/icons/eth.svg"}
@@ -234,7 +396,7 @@ const QuickTransfer = () => {
     <div className="bg-[#FFFFFF] rounded-md p-4 space-y-2">
       <h1 className="font-semibold">Quick Transfer</h1>
       <div className="border-2 border-[#CACACA] p-3 font-semibold rounded-md flex items-center justify-between text-sm">
-        <input value={"0.1824"} className="outline-none" />
+        <input value={"0.1824"} onChange={() => {}} className="outline-none" />
         <div className="flex items-center space-x-1">
           <Image
             src={"/assets/icons/usdc.svg"}
@@ -256,6 +418,7 @@ const QuickTransfer = () => {
         <input
           className="border-2 border-[#CACACA] outline-none p-3 font-semibold text-sm rounded-md w-full"
           value={"$100.0"}
+          onChange={() => {}}
         />
       </div>
     </div>
