@@ -14,4 +14,8 @@
   .no-scroll-bar::-webkit-scrollbar {
     display: none;
   }
+
+  .width {
+    width: calc(100vw - 240px);
+  }
 }

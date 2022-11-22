@@ -1,16 +1,16 @@
 import Image from "next/image";
-import { PublicLayout } from "../components";
+import { PublicLayout, BarChart, Dropdown } from "../components";
 
 const Dashboard = () => {
   return (
     <PublicLayout>
-      <div className="flex md:flex-row space-x-4 flex-col w-full relative">
-        <div className="max-w-5xl">
+      <div className=" flex space-x-4">
+        <div className="flex-1 space-y-4">
           <Cards />
           <Stats />
           <Trending />
         </div>
-        <div className="w-full md:w-96 space-y-4">
+        <div className="space-y-4">
           <Trade />
           <QuickTransfer />
           <RecentTransactions />
@@ -129,7 +129,26 @@ const Cards = () => {
 };
 
 const Stats = () => {
-  return <div>Stats</div>;
+  return (
+    <div className="rounded-md bg-[#FFFFFF] p-4">
+      <div>
+        <div className="flex  items-center justify-between">
+          <h1 className="font-semibold text-base">Statistics</h1>
+          <div className="space-x-2 flex items-center">
+            <Dropdown
+              selectedValue={"Spending"}
+              values={["Spending 1", "Spending 2", "Spending 3"]}
+            />
+            <Dropdown
+              selectedValue={"2022"}
+              values={["2021", "2020", "2019", "2018", "2017", "2016"]}
+            />
+          </div>
+        </div>
+      </div>
+      <BarChart />
+    </div>
+  );
 };
 
 const Trending = () => {

@@ -7,9 +7,15 @@ const PublicLayout = ({ children }) => {
   return (
     <div className="bg-[#F5F5F5] w-screen">
       <Header open={open} setOpen={setOpen} />
-      <div className="flex ">
+      <div className="flex w-screen">
         <Sidebar open={open} />
-        <main className={`${open ? "md:ml-60" : "md:ml-14"} p-4 flex-1 duration-300`}>{children}</main>
+        <main
+          className={`${
+            open ? "md:ml-60 width" : "md:ml-14"
+          } p-4 flex-1 duration-300`}
+        >
+          {children}
+        </main>
       </div>
     </div>
   );
