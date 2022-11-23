@@ -1,26 +1,144 @@
 import Image from "next/image";
-import { PublicLayout, BarChart, Dropdown } from "../components";
+import { PublicLayout, BarChart, Dropdown, ModalWrapper } from "../components";
 
 const Dashboard = () => {
   return (
-    <PublicLayout>
-      <div className=" flex space-x-4">
-        <div className="flex-1 space-y-4">
-          <Cards />
-          <Stats />
-          <Trending />
+    <div>
+      <PublicLayout>
+        <div className=" flex space-x-4">
+          <div className="flex-1 space-y-4">
+            <Cards />
+            <Stats />
+            <Trending />
+          </div>
+          <div className="space-y-4">
+            <Trade />
+            <QuickTransfer />
+            <RecentTransactions />
+          </div>
         </div>
-        <div className="space-y-4">
-          <Trade />
-          <QuickTransfer />
-          <RecentTransactions />
-        </div>
-      </div>
-    </PublicLayout>
+      </PublicLayout>
+      <ModalWrapper>
+        <DepositModal />
+      </ModalWrapper>
+    </div>
   );
 };
 
 export default Dashboard;
+
+const DepositModal = () => {
+  return (
+    <div className="bg-[#ffffff]	p-4 md:p-8 rounded-md space-y-6">
+      <div className="text-center font-semibold">
+        <h1 className="text-[#A9A9A9]  text-lg">USDC Amount</h1>
+        <h2 className="text-lg">$100</h2>
+      </div>
+
+      <ul className="flex  items-center justify-center">
+        <li className="w-12 rounded-3xl bg-[#0075FF] mx-1 flex items-center justify-center text-[#FFFFFF] font-semibold text-sm py-0.5 opacity-50">
+          $10
+        </li>
+        <li className="w-12 rounded-3xl bg-[#0075FF] mx-1 flex items-center justify-center text-[#FFFFFF] font-semibold text-sm py-0.5 opacity-50">
+          $50
+        </li>
+        <li className="w-12 rounded-3xl bg-[#0075FF] mx-1 flex items-center justify-center text-[#FFFFFF] font-semibold text-sm py-0.5">
+          $100
+        </li>
+        <li className="w-12 rounded-3xl bg-[#0075FF] mx-1 flex items-center justify-center text-[#FFFFFF] font-semibold text-sm py-0.5 opacity-50">
+          $250
+        </li>
+        <li className="w-12 rounded-3xl bg-[#0075FF] mx-1 flex items-center justify-center text-[#FFFFFF] font-semibold text-sm py-0.5 opacity-50">
+          $300
+        </li>
+      </ul>
+      <div className="space-y-4">
+        <div className="relative">
+          <div className="border-2 border-[#CACACA] p-3 font-semibold rounded-md flex items-center justify-between text-sm">
+            <input
+              value={"0.1824"}
+              onChange={() => {}}
+              className="outline-none"
+            />
+            <div className="flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/usdc.svg"}
+                alt={"usdc"}
+                width={24}
+                height={24}
+              />
+              <h3 className="text-[#626262]">USDC</h3>
+              <Image
+                src={"/assets/icons/down.svg"}
+                alt={"down"}
+                width={8}
+                height={4}
+              />
+            </div>
+          </div>
+          <div className="absolute top-1/2 left-1/2 mt-0 -translate-x-1/2 -translate-y-1/2 bg-[#FFFFFF] flex items-center justify-center w-8 h-8 rounded-full border border-[#CACACA]">
+            <Image
+              src={"/assets/icons/convert.svg"}
+              alt={"convert"}
+              width={16}
+              height={16}
+            />
+          </div>
+          <div className="border-2 mt-3 border-[#0075FF] p-3 font-semibold rounded-md flex items-center justify-between text-sm">
+            <input
+              value={"0.1824"}
+              onChange={() => {}}
+              className="outline-none"
+            />
+            <div className="flex items-center space-x-1">
+              <Image
+                src={"/assets/icons/eth.svg"}
+                alt={"eth"}
+                width={24}
+                height={24}
+              />
+              <h3 className="text-[#626262]">ETH</h3>
+              <Image
+                src={"/assets/icons/down.svg"}
+                alt={"down"}
+                width={8}
+                height={4}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="px-2 text-[#70758B] space-y-1">
+          <div className="flex  items-center justify-between text-xs font-medium">
+            <h3>Terms</h3>
+            <h3>Instantly</h3>
+          </div>
+          <div className="flex  items-center justify-between text-xs font-medium">
+            <h3>Start Date</h3>
+            <h3>11/15/2022 10:36 Am (EST)</h3>
+          </div>
+          <div className="flex  items-center justify-between text-xs font-medium">
+            <h3>Exchange Fee</h3>
+            <h3>0.00</h3>
+          </div>
+          <div className="flex  items-center justify-between text-xs font-medium">
+            <h3>Deposit Fee</h3>
+            <h3>1.00</h3>
+          </div>
+
+          <div className="flex text-[#000000] items-center justify-between text-sm pt-4 font-semibold">
+            <h3>Amount to Received</h3>
+            <h3>$99.00</h3>
+          </div>
+        </div>
+      </div>
+
+      <button className="bg-[#0075FF] w-full py-2 text-[#FFFFFF] font-semibold text-xl rounded-sm">
+        Deposit Now
+      </button>
+    </div>
+  );
+};
 
 const Cards = () => {
   return (
